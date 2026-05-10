@@ -9,6 +9,9 @@ INSTALL_REQUIRES = [
     # mujoco 3.8.0.
     "mujoco>=3.5.0,<3.8.0",
     "mujoco-warp==3.5.0",
+    # mjlab 1.2.0 reads warp.context.runtime.driver_version, which was removed
+    # from warp-lang 1.13.0.
+    "warp-lang>=1.12.0,<1.13.0",
 ]
 
 # Installation operation
