@@ -5,6 +5,9 @@ from setuptools import setup, find_packages
 # Minimum dependencies required prior to installation
 INSTALL_REQUIRES = [
     "mjlab==1.2.0",
+    # mujoco-warp 3.5.0 imports mjENBL_MULTICCD, which is not available in
+    # mujoco 3.8.0.
+    "mujoco>=3.5.0,<3.8.0",
     "mujoco-warp==3.5.0",
 ]
 
