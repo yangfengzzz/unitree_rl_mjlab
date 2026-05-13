@@ -24,6 +24,7 @@ def bpx_rough_env_cfg(
 
   cfg.sim.mujoco.ccd_iterations = 500
   cfg.sim.contact_sensor_maxmatch = 500
+  cfg.sim.nconmax = 64
 
   cfg.scene.entities = {"robot": get_bpx_robot_cfg()}
 
@@ -82,6 +83,7 @@ def bpx_rough_env_cfg(
   cfg.viewer.elevation = -10.0
 
   cfg.observations["critic"].terms["foot_height"].params["asset_cfg"].site_names = site_names
+  cfg.observations["actor"].terms.pop("height_scan", None)
 
   cfg.events["foot_friction"].params["asset_cfg"].geom_names = geom_names
   cfg.events["base_com"].params["asset_cfg"].body_names = ("torso",)
@@ -155,7 +157,7 @@ def bpx_flat_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
   cfg.scene.sensors = tuple(
     s for s in (cfg.scene.sensors or ()) if s.name != "terrain_scan"
   )
-  del cfg.observations["actor"].terms["height_scan"]
+  cfg.observations["actor"].terms.pop("height_scan", None)
   del cfg.observations["critic"].terms["height_scan"]
 
   # Disable terrain curriculum (not present in play mode since rough clears all).

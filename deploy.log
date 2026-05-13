@@ -1,0 +1,123 @@
+======================================================================
+Robot joint names (12 total):
+  [ 0] fl_hip_roll_joint
+  [ 1] fl_hip_pitch_joint
+  [ 2] fl_knee_joint
+  [ 3] fr_hip_roll_joint
+  [ 4] fr_hip_pitch_joint
+  [ 5] fr_knee_joint
+  [ 6] hl_hip_roll_joint
+  [ 7] hl_hip_pitch_joint
+  [ 8] hl_knee_joint
+  [ 9] hr_hip_roll_joint
+  [10] hr_hip_pitch_joint
+  [11] hr_knee_joint
+
+======================================================================
+Actuator PD parameters (in joint name order):
+Joint Name                      Stiffness (kp)    Damping (kd)    Effort Limit
+---------------------------------------------------------------------------
+  fl_hip_roll_joint                      20.0000          1.0000         30.0000
+  fl_hip_pitch_joint                     20.0000          1.0000         30.0000
+  fl_knee_joint                          40.0000          2.0000         30.0000
+  fr_hip_roll_joint                      20.0000          1.0000         30.0000
+  fr_hip_pitch_joint                     20.0000          1.0000         30.0000
+  fr_knee_joint                          40.0000          2.0000         30.0000
+  hl_hip_roll_joint                      20.0000          1.0000         30.0000
+  hl_hip_pitch_joint                     20.0000          1.0000         30.0000
+  hl_knee_joint                          40.0000          2.0000         30.0000
+  hr_hip_roll_joint                      20.0000          1.0000         30.0000
+  hr_hip_pitch_joint                     20.0000          1.0000         30.0000
+  hr_knee_joint                          40.0000          2.0000         30.0000
+
+======================================================================
+Default joint positions (in joint name order):
+Joint Name                         Default Pos
+---------------------------------------------
+  fl_hip_roll_joint                    -0.100000
+  fl_hip_pitch_joint                    0.900000
+  fl_knee_joint                        -1.800000
+  fr_hip_roll_joint                     0.100000
+  fr_hip_pitch_joint                    0.900000
+  fr_knee_joint                        -1.800000
+  hl_hip_roll_joint                    -0.100000
+  hl_hip_pitch_joint                    0.900000
+  hl_knee_joint                        -1.800000
+  hr_hip_roll_joint                     0.100000
+  hr_hip_pitch_joint                    0.900000
+  hr_knee_joint                        -1.800000
+
+======================================================================
+Action scale (in joint name order):
+Joint Name                               Scale
+---------------------------------------------
+  fl_hip_roll_joint                     0.250000
+  fl_hip_pitch_joint                    0.250000
+  fl_knee_joint                         0.250000
+  fr_hip_roll_joint                     0.250000
+  fr_hip_pitch_joint                    0.250000
+  fr_knee_joint                         0.250000
+  hl_hip_roll_joint                     0.250000
+  hl_hip_pitch_joint                    0.250000
+  hl_knee_joint                         0.250000
+  hr_hip_roll_joint                     0.250000
+  hr_hip_pitch_joint                    0.250000
+  hr_knee_joint                         0.250000
+
+======================================================================
+Action offset (in joint name order):
+  (use_default_offset=True, effective offset = default_joint_pos above)
+Joint Name                              Offset
+---------------------------------------------
+  fl_hip_roll_joint                     0.000000
+  fl_hip_pitch_joint                    0.000000
+  fl_knee_joint                         0.000000
+  fr_hip_roll_joint                     0.000000
+  fr_hip_pitch_joint                    0.000000
+  fr_knee_joint                         0.000000
+  hl_hip_roll_joint                     0.000000
+  hl_hip_pitch_joint                    0.000000
+  hl_knee_joint                         0.000000
+  hr_hip_roll_joint                     0.000000
+  hr_hip_pitch_joint                    0.000000
+  hr_knee_joint                         0.000000
+
+======================================================================
+Observation group: actor
+  (group-level history_length=1 overrides term-level)
+  concatenate_terms=True
+  enable_corruption=False
+
+  Term Name                             Scale               Clip  History Len                 Noise
+  -------------------------------------------------------------------------------------------------
+  base_ang_vel                           None               None       0 -> 1  UniformNoiseCfg(n_min=-0.2, n_max=0.2)
+  projected_gravity                      None               None       0 -> 1  UniformNoiseCfg(n_min=-0.05, n_max=0.05)
+  command                                None               None       0 -> 1                  None
+  phase                                  None               None       0 -> 1                  None
+  joint_pos                              None               None       0 -> 1  UniformNoiseCfg(n_min=-0.01, n_max=0.01)
+  joint_vel                              None               None       0 -> 1  UniformNoiseCfg(n_min=-1.5, n_max=1.5)
+  actions                                None               None       0 -> 1                  None
+  height_scan                             0.2               None       0 -> 1  UniformNoiseCfg(n_min=-0.1, n_max=0.1)
+
+======================================================================
+Observation group: critic
+  (group-level history_length=1 overrides term-level)
+  concatenate_terms=True
+  enable_corruption=False
+
+  Term Name                             Scale               Clip  History Len                 Noise
+  -------------------------------------------------------------------------------------------------
+  base_ang_vel                           None               None       0 -> 1  UniformNoiseCfg(n_min=-0.2, n_max=0.2)
+  projected_gravity                      None               None       0 -> 1  UniformNoiseCfg(n_min=-0.05, n_max=0.05)
+  command                                None               None       0 -> 1                  None
+  phase                                  None               None       0 -> 1                  None
+  joint_pos                              None               None       0 -> 1  UniformNoiseCfg(n_min=-0.01, n_max=0.01)
+  joint_vel                              None               None       0 -> 1  UniformNoiseCfg(n_min=-1.5, n_max=1.5)
+  actions                                None               None       0 -> 1                  None
+  height_scan                             0.2               None       0 -> 1                  None
+  base_lin_vel                           None               None       0 -> 1  UniformNoiseCfg(n_min=-0.5, n_max=0.5)
+  foot_height                            None               None       0 -> 1                  None
+  foot_air_time                          None               None       0 -> 1                  None
+  foot_contact                           None               None       0 -> 1                  None
+  foot_contact_forces                    None               None       0 -> 1                  None
+

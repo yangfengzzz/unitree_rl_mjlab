@@ -49,7 +49,7 @@
             <geom name="fl_calf_link_visual_0_1" group="1" contype="0" conaffinity="0" type="mesh" mesh="mesh_6" material="mat_calf_Material_002_0_0_0_1" />
             <joint name="fl_knee_joint" pos="0 0 0" type="hinge" axis="0 1 0" range="-2.7531 -0.5539" />
             <body name="fl_toe_link" pos="0 0 -0.2427">
-              <geom name="fl_toe_link_collision_0" group="3" quat="0.707105483 0.70710808 0 0" type="cylinder" size="0.027 0.015" />
+              <geom name="fl_toe_link_collision_0" group="3" type="sphere" size="0.027" />
               <site name="FL" pos="0 0 0" type="sphere" size="0.027" />
             </body>
           </body>
@@ -73,7 +73,7 @@
             <geom name="fr_calf_link_visual_0_1" group="1" contype="0" conaffinity="0" type="mesh" mesh="mesh_6" material="mat_calf_Material_002_0_0_0_1" />
             <joint name="fr_knee_joint" pos="0 0 0" type="hinge" axis="0 1 0" range="-2.7531 -0.5539" />
             <body name="fr_toe_link" pos="0 0 -0.2427">
-              <geom name="fr_toe_link_collision_0" group="3" quat="0.707105483 0.70710808 0 0" type="cylinder" size="0.027 0.015" />
+              <geom name="fr_toe_link_collision_0" group="3" type="sphere" size="0.027" />
               <site name="FR" pos="0 0 0" type="sphere" size="0.027" />
             </body>
           </body>
@@ -97,7 +97,7 @@
             <geom name="hl_calf_link_visual_0_1" group="1" contype="0" conaffinity="0" type="mesh" mesh="mesh_6" material="mat_calf_Material_002_0_0_0_1" />
             <joint name="hl_knee_joint" pos="0 0 0" type="hinge" axis="0 1 0" range="-2.7531 -0.5539" />
             <body name="hl_toe_link" pos="0 0 -0.2427">
-              <geom name="hl_toe_link_collision_0" group="3" quat="0.707105483 0.70710808 0 0" type="cylinder" size="0.027 0.015" />
+              <geom name="hl_toe_link_collision_0" group="3" type="sphere" size="0.027" />
               <site name="RL" pos="0 0 0" type="sphere" size="0.027" />
             </body>
           </body>
@@ -121,7 +121,7 @@
             <geom name="hr_calf_link_visual_0_1" group="1" contype="0" conaffinity="0" type="mesh" mesh="mesh_6" material="mat_calf_Material_002_0_0_0_1" />
             <joint name="hr_knee_joint" pos="0 0 0" type="hinge" axis="0 1 0" range="-2.7531 -0.5539" />
             <body name="hr_toe_link" pos="0 0 -0.2427">
-              <geom name="hr_toe_link_collision_0" group="3" quat="0.707105483 0.70710808 0 0" type="cylinder" size="0.027 0.015" />
+              <geom name="hr_toe_link_collision_0" group="3" type="sphere" size="0.027" />
               <site name="RR" pos="0 0 0" type="sphere" size="0.027" />
             </body>
           </body>

@@ -35,27 +35,12 @@ def get_spec() -> mujoco.MjSpec:
 ##
 # Actuator config.
 ##
-
-BPX_ACTUATOR_HIP_ROLL = BuiltinPositionActuatorCfg(
-  target_names_expr=(".*hip_roll.*",),
-  stiffness=20.0,
+BPX_ACTUATOR_CFG = BuiltinPositionActuatorCfg(
+  target_names_expr=(".*_hip_roll_joint", ".*_hip_pitch_joint", ".*_knee_joint"),
+  stiffness=30.0,
   damping=1.0,
-  effort_limit=30,
+  effort_limit=30.0,
   armature=0.01,
-)
-BPX_ACTUATOR_HIP_PITCH = BuiltinPositionActuatorCfg(
-  target_names_expr=(".*hip_pitch.*",),
-  stiffness=20.0,
-  damping=1.0,
-  effort_limit=30,
-  armature=0.01,
-)
-BPX_ACTUATOR_KNEE = BuiltinPositionActuatorCfg(
-  target_names_expr=(".*knee.*",),
-  stiffness=40.0,
-  damping=2.0,
-  effort_limit=30,
-  armature=0.02,
 )
 
 ##
@@ -109,9 +94,7 @@ FULL_COLLISION = CollisionCfg(
 
 BPX_ARTICULATION = EntityArticulationInfoCfg(
   actuators=(
-    BPX_ACTUATOR_HIP_ROLL,
-    BPX_ACTUATOR_HIP_PITCH,
-    BPX_ACTUATOR_KNEE,
+    BPX_ACTUATOR_CFG
   ),
   soft_joint_pos_limit_factor=0.9,
 )
