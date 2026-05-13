@@ -1,15 +1,15 @@
 # Repository Guidelines
 
 ## Environment
-- Use the Conda environment `unitree_rl_mjlab` for Python commands.
+- Use the Conda environment `bpx_rl_mjlab` for Python commands.
 - Prefer non-interactive commands in automation:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/list_envs.py
-  conda run -n unitree_rl_mjlab python scripts/train.py Unitree-G1-Flat --env.scene.num-envs=4096
+  conda run -n bpx_rl_mjlab python scripts/list_envs.py
+  conda run -n bpx_rl_mjlab python scripts/train.py Unitree-G1-Flat --env.scene.num-envs=4096
   ```
 - For an interactive shell, run:
   ```bash
-  conda activate unitree_rl_mjlab
+  conda activate bpx_rl_mjlab
   ```
 - The documented setup uses Python 3.11 and installs the project with `pip install -e .`.
 - System packages needed for C++ simulation/deployment include `libyaml-cpp-dev`, `libboost-all-dev`, `libeigen3-dev`, `libspdlog-dev`, and `libfmt-dev`.
@@ -26,23 +26,23 @@
 ## Common Commands
 - List registered tasks:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/list_envs.py
+  conda run -n bpx_rl_mjlab python scripts/list_envs.py
   ```
 - Train a velocity policy:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/train.py Unitree-G1-Flat --env.scene.num-envs=4096
+  conda run -n bpx_rl_mjlab python scripts/train.py Unitree-G1-Flat --env.scene.num-envs=4096
   ```
 - Train with multiple GPUs:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/train.py Unitree-G1-Flat --gpu-ids 0 1 --env.scene.num-envs=4096
+  conda run -n bpx_rl_mjlab python scripts/train.py Unitree-G1-Flat --gpu-ids 0 1 --env.scene.num-envs=4096
   ```
 - Convert a CSV motion file to NPZ:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/csv_to_npz.py --input-file src/assets/motions/g1/dance1_subject2.csv --output-name dance1_subject2.npz --input-fps 30 --output-fps 50 --robot g1
+  conda run -n bpx_rl_mjlab python scripts/csv_to_npz.py --input-file src/assets/motions/g1/dance1_subject2.csv --output-name dance1_subject2.npz --input-fps 30 --output-fps 50 --robot g1
   ```
 - Play a trained policy:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/play.py Unitree-G1-Flat --checkpoint_file=logs/rsl_rl/g1_velocity/<run>/model_<iteration>.pt
+  conda run -n bpx_rl_mjlab python scripts/play.py Unitree-G1-Flat --checkpoint_file=logs/rsl_rl/g1_velocity/<run>/model_<iteration>.pt
   ```
 - Build simulator:
   ```bash
@@ -65,11 +65,11 @@
 ## Verification
 - For Python changes, at minimum run the smallest relevant command through the Conda environment, such as:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/list_envs.py
+  conda run -n bpx_rl_mjlab python scripts/list_envs.py
   ```
 - For task/config changes, run a low-cost smoke test with a small environment count before suggesting full training:
   ```bash
-  conda run -n unitree_rl_mjlab python scripts/train.py <Task-ID> --env.scene.num-envs=1
+  conda run -n bpx_rl_mjlab python scripts/train.py <Task-ID> --env.scene.num-envs=1
   ```
 - For C++ simulator or deployment changes, verify the affected CMake target builds.
 - If GPU, MuJoCo display, joystick, robot network, or hardware access is unavailable, state exactly which verification was skipped and why.
